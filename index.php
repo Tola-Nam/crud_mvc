@@ -12,13 +12,18 @@ $studentController = new StudentController();
 // }
 
 $page = $_GET['page'] ?? 'index';
+
 $id = $_GET['id'] ?? null;
+
 switch ($page) {
     case 'create':
         $studentController->create();
         break;
     case 'edit':
         $studentController->edit($id);
+        break;
+    case 'destroy':
+        $studentController->destroy($id);
         break;
     default:
         $studentController->index();

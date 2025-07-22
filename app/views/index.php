@@ -19,7 +19,9 @@
                     <td><?php echo $s['phone_number'] ?></td>
                     <td>
                         <a href="index.php?page=edit&id=<?= $s['student_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="index.php?page=destroy&id=<?= $s['student_id'] ?>"
+                            onclick="return confirm('are you sur do you want to deleted 😊?')"
+                            class="btn btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

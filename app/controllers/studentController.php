@@ -53,4 +53,10 @@ class StudentController
         }
 
     }
+
+    public function destroy($id)
+    {
+        $this->model->delete($id);
+        header("Location: index.php");
+    }
 }

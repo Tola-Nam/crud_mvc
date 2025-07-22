@@ -35,4 +35,12 @@ class Students
         $stmt->bind_param("sssi", $name, $phone_number, $gender, $id);
         return $stmt->execute();
     }
+
+    public function delete($id)
+    {
+        $stmt = $this->conn->prepare("DELETE FROM `cms_for_students` WHERE `student_id` = ?");
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+        // return $stmt->get_result()->fetch_assoc();
+    }
 }
